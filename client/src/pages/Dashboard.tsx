@@ -17,9 +17,8 @@ type Kanban = {
     tasks?: string[],
 }
 
-
 export default function Dashboard(){
-    const API_URL = process.env.API_URL;
+    const API_URL = import.meta.env.VITE_API_URL;
 
     const [tasks, setTasks] = useState<Task[]>([]);
     const [kanbans, setKanbans] = useState<Kanban[]>([])
@@ -64,6 +63,7 @@ export default function Dashboard(){
     }
     async function deleteKanbanHandler(id: string) {
         try {
+            console.log('hashdhasd')
             const response = await axios.delete(`${API_URL}/kanbans/${id}`);
             setKanbans([...response.data]);
         } catch (error){
@@ -133,14 +133,14 @@ export default function Dashboard(){
                         <span className='w-full cursor-pointer h-[40px] pl-[8px] hover:bg-gray-300 transition-all rounded bg-gray-200'>{kanban.title}</span>
 
                         {mouseEnteredKanbanTitle === kanban._id && (
-                            <div className='bg-gray-200 p-[8px] rounded hover:cursor-pointer transition-all hover:bg-gray-300'>
+                            <div onClick={() => deleteKanbanHandler(kanban._id)} className='bg-gray-200 p-[8px] rounded hover:cursor-pointer transition-all hover:bg-gray-300'>
                                 <BsThreeDots className='w-[24px] h-[24px]'/>
                             </div>
                         )}
                     </div>
 
                     {mouseEnteredKanban === kanban._id && (
-                        <div onClick={() => deleteKanbanHandler(kanban._id)} className='flex gap-2 items-center mx-[8px] hover:bg-gray-200 p-[8px] rounded hover:cursor-pointer transition-all hover:bg-gray-300'>
+                        <div className='flex gap-2 items-center mx-[8px] hover:bg-gray-200 p-[8px] rounded hover:cursor-pointer transition-all hover:bg-gray-300'>
                             <FaPlus className='w-[16px] h-[16px]'/>
                             Create a task
                         </div>
