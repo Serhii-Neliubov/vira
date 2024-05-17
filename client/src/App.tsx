@@ -8,6 +8,8 @@ import Home from "@pages/Home.tsx";
 import Login from "@pages/Login.tsx";
 import Registration from "@pages/Registration.tsx";
 import ProtectedRoute from "@components/ProtectedRoute.tsx";
+import ChangePassword from "@pages/ChangePassword.tsx";
+import AccountRecovery from "@pages/AccountRecovery.tsx";
 
 const router = createBrowserRouter([
     {
@@ -25,6 +27,14 @@ const router = createBrowserRouter([
     {
         path: "/register",
         element: <Registration />,
+    },
+    {
+        path: "/change-password",
+        element: <ChangePassword />,
+    },
+    {
+        path: "/account-recovery",
+        element: <AccountRecovery />,
     },
 ]);
 

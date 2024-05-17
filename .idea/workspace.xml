@@ -4,10 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3249459e-c7ea-46c9-b278-6d43c987056b" name="Changes" comment="added logo">
+    <list default="true" id="3249459e-c7ea-46c9-b278-6d43c987056b" name="Changes" comment="added delete kanban functional">
+      <change afterPath="$PROJECT_DIR$/client/src/pages/AccountRecovery.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/pages/ChangePassword.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/pages/Dashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Dashboard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/Registration.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Registration.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +130,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715962420298</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="added delete kanban functional">
+      <option name="closed" value="true" />
+      <created>1715968940827</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1715968940827</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,6 +151,7 @@
     <MESSAGE value="fixed alias ts error , added dom elements for Login and Registration pages" />
     <MESSAGE value="styles for dashboard components" />
     <MESSAGE value="added logo" />
-    <option name="LAST_COMMIT_MESSAGE" value="added logo" />
+    <MESSAGE value="added delete kanban functional" />
+    <option name="LAST_COMMIT_MESSAGE" value="added delete kanban functional" />
   </component>
 </project>

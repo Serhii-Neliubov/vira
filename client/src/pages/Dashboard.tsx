@@ -3,8 +3,8 @@ import { FaPlus } from "react-icons/fa";
 import { useState } from "react";
 import { IoMdCheckmark } from "react-icons/io";
 import axios from "axios";
-import {API_URL} from "../App.tsx";
-import {BsThreeDots} from "react-icons/bs";
+import { API_URL } from "../App.tsx";
+import { BsThreeDots } from "react-icons/bs";
 
 
 type Task = {
@@ -16,7 +16,7 @@ type Task = {
 type Kanban = {
     _id: string,
     title: string,
-    img?: React.ReactNode
+    tasks?: string[],
 }
 
 
@@ -31,6 +31,7 @@ export default function Dashboard(){
     const [isCreateKanbanModalOpen, setIsCreateKanbanModalOpen] = useState(false);
 
     const [mouseEnteredKanban, setMouseEnteredKanban] = useState('');
+    const [mouseEnteredKanbanTitle, setMouseEnteredKanbanTitle] = useState('');
 
     useEffect(() => {
         getKanbans().then(data => setKanbans(data));
@@ -118,20 +119,32 @@ export default function Dashboard(){
             </div>
 
             {kanbans.map(kanban =>
-                <div key={kanban._id} className='min-w-[270px] bg-[#f7f8f9] min-h-[600px] rounded'>
+                <div
+                    onMouseEnter={() => setMouseEnteredKanban(kanban._id)}
+                    onMouseLeave={() => setMouseEnteredKanban('')}
+                    key={kanban._id}
+                    className='min-w-[270px] bg-[#f7f8f9] min-h-[600px] rounded'
+                >
                     <div
-                        onMouseEnter={() => setMouseEnteredKanban(kanban._id)}
-                        onMouseLeave={() => setMouseEnteredKanban('')}
+                        onMouseEnter={() => setMouseEnteredKanbanTitle(kanban._id)}
+                        onMouseLeave={() => setMouseEnteredKanbanTitle('')}
                         className='flex gap-2 py-[8px] px-[8px]'
                     >
                         <span className='w-full cursor-pointer h-[40px] pl-[8px] hover:bg-gray-300 transition-all rounded bg-gray-200'>{kanban.title}</span>
 
-                        {mouseEnteredKanban === kanban._id && (
-                            <div onClick={() => deleteKanbanHandler(kanban._id)} className='bg-gray-200 p-[8px] rounded hover:cursor-pointer transition-all hover:bg-gray-300'>
+                        {mouseEnteredKanbanTitle === kanban._id && (
+                            <div className='bg-gray-200 p-[8px] rounded hover:cursor-pointer transition-all hover:bg-gray-300'>
                                 <BsThreeDots className='w-[24px] h-[24px]'/>
                             </div>
                         )}
                     </div>
+
+                    {mouseEnteredKanban === kanban._id && (
+                        <div onClick={() => deleteKanbanHandler(kanban._id)} className='flex gap-2 items-center mx-[8px] hover:bg-gray-200 p-[8px] rounded hover:cursor-pointer transition-all hover:bg-gray-300'>
+                            <FaPlus className='w-[16px] h-[16px]'/>
+                            Create a task
+                        </div>
+                    )}
                 </div>
             )}
 
@@ -150,7 +163,7 @@ export default function Dashboard(){
                     </div> :
                     <FaPlus
                         onClick={() => setIsCreateKanbanModalOpen(true)}
-                        className='w-[35px] h-[35px] p-[10px] cursor-pointer hover:bg-gray-300 transition-all rounded bg-[#091e420f]'
+                        className='w-[42px] h-[42px] p-[13px] cursor-pointer hover:bg-gray-300 transition-all rounded bg-[#091e420f]'
                     />
                 }
             </div>
