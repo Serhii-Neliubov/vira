@@ -3,9 +3,7 @@ import { FaPlus } from "react-icons/fa";
 import { useState } from "react";
 import { IoMdCheckmark } from "react-icons/io";
 import axios from "axios";
-import { API_URL } from "../App.tsx";
 import { BsThreeDots } from "react-icons/bs";
-
 
 type Task = {
     id: number,
@@ -21,6 +19,8 @@ type Kanban = {
 
 
 export default function Dashboard(){
+    const API_URL = process.env.API_URL;
+
     const [tasks, setTasks] = useState<Task[]>([]);
     const [kanbans, setKanbans] = useState<Kanban[]>([])
 
