@@ -3,10 +3,10 @@ import { Fragment } from "react";
 import { Toaster } from "react-hot-toast";
 
 // Pages
-import Dashboard from "./pages/Dashboard.tsx";
-import Home from "./pages/Home.tsx";
-import Login from "./pages/Login.tsx";
-import Registration from "./pages/Registration.tsx";
+import Dashboard from "@pages/Dashboard.tsx";
+import Home from "@pages/Home.tsx";
+import Login from "@pages/Login.tsx";
+import Registration from "@pages/Registration.tsx";
 
 const router = createBrowserRouter([
     {
