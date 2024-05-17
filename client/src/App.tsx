@@ -7,11 +7,12 @@ import Dashboard from "@pages/Dashboard.tsx";
 import Home from "@pages/Home.tsx";
 import Login from "@pages/Login.tsx";
 import Registration from "@pages/Registration.tsx";
+import ProtectedRoute from "@components/ProtectedRoute.tsx";
 
 const router = createBrowserRouter([
     {
         path: "/dashboard",
-        element: <Dashboard />,
+        element: <ProtectedRoute element={<Dashboard />} />,
     },
     {
         path: "/",
