@@ -1,8 +1,9 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {FaPlus} from "react-icons/fa";
 import {useState} from "react";
 import {IoMdCheckmark} from "react-icons/io";
 import toast from "react-hot-toast";
+import axios from "axios";
 
 type Task = {
     id: number,
@@ -11,9 +12,12 @@ type Task = {
 }
 
 type Kanban = {
-    id: number,
-    title: string
+    _id: string,
+    title: string,
+    img?: React.ReactNode
 }
+
+const API_URL = 'http://localhost:3000';
 
 export default function Dashboard(){
     const [tasks, setTasks] = useState<Task[]>([]);
@@ -25,7 +29,24 @@ export default function Dashboard(){
     const [isCreateTaskModalOpen, setIsCreateTaskModalOpen] = useState(false);
     const [isCreateKanbanModalOpen, setIsCreateKanbanModalOpen] = useState(false);
 
+    const getKanbans = async () => {
+        try {
+            const response = await axios.get(`${API_URL}/kanbans`);
+            setKanbans(response.data);
+        } catch (e) {
+            console.error(e);
+        }
+    }
+
+    useEffect(() => {
+        getKanbans();
+    }, [])
+
     const createTaskHandler = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        if(!newTaskTitle.length) {
+            return toast.error('Title is required!');
+        }
+
         if(event.key !== 'Enter') {
             return;
         }
@@ -41,20 +62,16 @@ export default function Dashboard(){
     }
 
     const createKanbanHandler = (event: React.KeyboardEvent<HTMLInputElement>) => {
-        if(!newKanbanTitle.length) {
-            return toast.error('Title is required!');
-        }
-
-        if(event.key !== 'Enter') {
+        if (event.key !== 'Enter') {
             return;
         }
 
-        const kanban = {
-            id: Date.now(),
-            title: newKanbanTitle,
-        }
+        axios.post(`${API_URL}/kanbans`, {
+            title: newKanbanTitle
+        }).then(r => r)
 
-        setKanbans([...kanbans, kanban]);
+        // setKanbans([...kanbans, kanban]);
+
         setNewKanbanTitle('');
         setIsCreateKanbanModalOpen(false);
     }
@@ -84,7 +101,11 @@ export default function Dashboard(){
                     }
                 </div>
             </div>
-            <div className='min-w-[270px] bg-amber-500'>
+            <div
+                onMouseEnter={() => console.log('hello')}
+                onMouseLeave={() => console.log('goodbye')}
+                className='min-w-[270px] bg-amber-500'
+            >
                 <span>В работе</span>
             </div>
             <div className='min-w-[270px] bg-amber-500'>
@@ -92,7 +113,7 @@ export default function Dashboard(){
             </div>
 
             {kanbans.map(kanban =>
-                <div className='min-w-[270px] bg-amber-500'>
+                <div key={kanban._id} className='min-w-[270px] bg-amber-500 min-h-[600px]'>
                     <div className='flex gap-2 items-center'>{kanban.title}</div>
                 </div>
             )}
