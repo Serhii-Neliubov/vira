@@ -20,6 +20,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
 
+    /* Routing */
     "baseUrl": ".",
     "paths": {
       "@components/*": ["src/components/*"],

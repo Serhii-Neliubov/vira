@@ -6,7 +6,8 @@ import { defineConfig } from "vite";
 import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 
-let __dirname;
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
 const root = resolve(__dirname, "src");
 
 export default defineConfig({

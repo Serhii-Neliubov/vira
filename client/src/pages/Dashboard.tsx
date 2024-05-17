@@ -3,6 +3,8 @@ import { FaPlus } from "react-icons/fa";
 import { useState } from "react";
 import { IoMdCheckmark } from "react-icons/io";
 import axios from "axios";
+import {API_URL} from "../App.tsx";
+import {BsThreeDots} from "react-icons/bs";
 
 type Task = {
     id: number,
@@ -16,7 +18,6 @@ type Kanban = {
     img?: React.ReactNode
 }
 
-const API_URL = 'http://localhost:3000';
 
 export default function Dashboard(){
     const [tasks, setTasks] = useState<Task[]>([]);
@@ -43,7 +44,7 @@ export default function Dashboard(){
         }
     }
 
-    const createTaskHandler = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    function createTaskHandler (event: React.KeyboardEvent<HTMLInputElement>) {
         if(event.key !== 'Enter') {
             return;
         }
@@ -67,7 +68,6 @@ export default function Dashboard(){
             title: newKanbanTitle
         })
 
-        // setKanbans([...kanbans, newKanbanTitle]);
         setNewKanbanTitle('');
         setIsCreateKanbanModalOpen(false);
     }
@@ -105,22 +105,24 @@ export default function Dashboard(){
             </div>
 
             {kanbans.map(kanban =>
-                <div key={kanban._id} className='min-w-[270px] bg-amber-500 min-h-[600px]'>
+                <div key={kanban._id} className='min-w-[270px] bg-[#f7f8f9] min-h-[600px]'>
                     <div
                         onMouseEnter={() => setMouseEnteredKanban(kanban._id)}
                         onMouseLeave={() => setMouseEnteredKanban('')}
-                        className='flex gap-2 py-[15px] pl-[5px]'
+                        className='flex gap-2 py-[15px] px-[5px]'
                     >
-                        {kanban.title}
+                        <span className='w-full cursor-pointer h-[40px] pl-[8px] hover:bg-gray-300 transition-all rounded bg-gray-200'>{kanban.title}</span>
 
                         {mouseEnteredKanban === kanban._id && (
-                            <FaPlus className='mt-[5px] hover:cursor-pointer'/>
+                            <div className='bg-gray-200 p-[8px] rounded hover:cursor-pointer transition-all hover:bg-gray-300'>
+                                <BsThreeDots className='w-[24px] h-[24px]'/>
+                            </div>
                         )}
                     </div>
                 </div>
             )}
 
-            <div className=''>
+            <div>
                 {isCreateKanbanModalOpen ?
                     <input
                         autoFocus
@@ -131,7 +133,7 @@ export default function Dashboard(){
                         onChange={event => setNewKanbanTitle(event.target.value)}
                         className='bg-amber-500 outline-none placeholder:text-black'
                     /> :
-                    <FaPlus onClick={() => setIsCreateKanbanModalOpen(true)} />
+                    <FaPlus onClick={() => setIsCreateKanbanModalOpen(true)} className='w-[35px] h-[35px] p-[10px] cursor-pointer hover:bg-gray-300 transition-all rounded bg-[#091e420f]'/>
                 }
             </div>
         </div>
