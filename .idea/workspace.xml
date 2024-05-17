@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3249459e-c7ea-46c9-b278-6d43c987056b" name="Changes" comment="Basic server structure, kanban get and post functionality">
+    <list default="true" id="3249459e-c7ea-46c9-b278-6d43c987056b" name="Changes" comment="Hover icon visibility effect">
+      <change afterPath="$PROJECT_DIR$/client/src/App.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/pages/Home.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/pages/Login.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/pages/Registration.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/utils/interceptors.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/Dashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Dashboard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +86,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715948490624</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Hover icon visibility effect">
+      <option name="closed" value="true" />
+      <created>1715951465689</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1715951465689</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -90,6 +102,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Basic server structure, kanban get and post functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="Basic server structure, kanban get and post functionality" />
+    <MESSAGE value="Hover icon visibility effect" />
+    <option name="LAST_COMMIT_MESSAGE" value="Hover icon visibility effect" />
   </component>
 </project>
