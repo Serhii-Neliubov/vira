@@ -21,6 +21,10 @@ const KanbanSchema = new mongoose.Schema({
     title: String,
 });
 
+const TaskSchema = new mongoose.Schema({
+    title: String,
+})
+
 app.post('/kanbans', (req, res) => {
     try {
         if(!req.body){
@@ -43,6 +47,17 @@ app.get('/kanbans', async (req, res) => {
         const kanbans = await kanbanModel.find();
 
         res.status(200).json(kanbans);
+    } catch (error) {
+        console.error(error.message);
+    }
+});
+
+app.delete('/kanbans/:id', async (req, res) => {
+    try {
+        const kanbanModel = mongoose.model('Kanban', KanbanSchema);
+        const kanban = await kanbanModel.findByIdAndDelete(req.params.id);
+
+        res.status(200).json(kanban);
     } catch (error) {
         console.error(error.message);
     }

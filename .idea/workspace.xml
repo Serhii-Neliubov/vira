@@ -4,17 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3249459e-c7ea-46c9-b278-6d43c987056b" name="Changes" comment="">
+    <list default="true" id="3249459e-c7ea-46c9-b278-6d43c987056b" name="Changes" comment="Basic server structure, kanban get and post functionality">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/pages/Dashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Dashboard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/server/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -82,9 +74,22 @@
       <option name="presentableId" value="Default" />
       <updated>1715888161876</updated>
     </task>
+    <task id="LOCAL-00001" summary="Basic server structure, kanban get and post functionality">
+      <option name="closed" value="true" />
+      <created>1715948490624</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1715948490624</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Basic server structure, kanban get and post functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="Basic server structure, kanban get and post functionality" />
   </component>
 </project>
