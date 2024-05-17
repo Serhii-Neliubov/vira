@@ -1,6 +1,7 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
+import axios from "axios";
 
 type Inputs = {
     email: string,
@@ -9,16 +10,19 @@ type Inputs = {
 }
 
 export default function Registration() {
+    const API_URL = import.meta.env.VITE_API_URL
+
     const {
         register,
         handleSubmit,
     } = useForm<Inputs>();
 
-    const onSubmit: SubmitHandler<Inputs> = (data) => {
+    const onSubmit: SubmitHandler<Inputs> = async (data) => {
         if(data.password !== data.confirmPassword){
             return toast.error('Passwords did not match!');
         }
 
+        await axios.post(`${API_URL}/auth/register`, data);
         console.log(data);
     };
 

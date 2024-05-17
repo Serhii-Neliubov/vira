@@ -1,5 +1,6 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 type Inputs = {
     email: string,
@@ -7,12 +8,18 @@ type Inputs = {
 }
 
 export default function Login() {
+    const API_URL = import.meta.env.VITE_API_URL
+
     const {
         register,
         handleSubmit, 
     } = useForm<Inputs>();
     
-    const onSubmit: SubmitHandler<Inputs> = (data) => {
+    const onSubmit: SubmitHandler<Inputs> = async (data) => {
+        await axios.post(`${API_URL}/auth/login`, data);
+        // cleanup form
+
+
         console.log(data);
     };
 
@@ -54,7 +61,7 @@ export default function Login() {
                                         <label htmlFor="remember" className="text-gray-500">Remember me</label>
                                     </div>
                                 </div>
-                                <Link to="/recovery-password" className="text-sm font-medium text-primary-600 hover:underline">Forgot password?</Link>
+                                <Link to="/account-recovery" className="text-sm font-medium text-primary-600 hover:underline">Forgot password?</Link>
                             </div>
                             <button type="submit" className="w-full text-white bg-black hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Sign in</button>
                             <p className="text-sm font-light text-gray-500">

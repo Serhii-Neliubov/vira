@@ -21,16 +21,21 @@ const KanbanSchema = new mongoose.Schema({
     title: String,
 });
 
+const UserSchema = new mongoose.Schema({
+    email: String,
+    password: String
+})
+
 const TaskSchema = new mongoose.Schema({
     title: String,
 })
 
 app.post('/kanbans', async (req, res) => {
-    try {
-        if(!req.body){
-            new Error('No data provided');
-        }
+    if(!req.body){
+        new Error('No data provided');
+    }
 
+    try {
         const kanbanModel = mongoose.model('Kanban', KanbanSchema);
         const kanban = new kanbanModel(req.body);
         await kanban.save();
@@ -40,10 +45,9 @@ app.post('/kanbans', async (req, res) => {
 
         res.status(200).json(kanbans);
     } catch (error) {
-        console.error(error.message);
+        res.status(400).json(error.message)
     }
 });
-
 app.get('/kanbans', async (req, res) => {
     try {
         const kanbanModel = mongoose.model('Kanban', KanbanSchema);
@@ -51,10 +55,9 @@ app.get('/kanbans', async (req, res) => {
 
         res.status(200).json(kanbans);
     } catch (error) {
-        console.error(error.message);
+        res.status(400).json(error.message)
     }
 });
-
 app.delete('/kanbans/:id', async (req, res) => {
     try {
         const kanbanModel = mongoose.model('Kanban', KanbanSchema);
@@ -65,6 +68,39 @@ app.delete('/kanbans/:id', async (req, res) => {
 
         res.status(200).json(kanbans);
     } catch (error) {
-        console.error(error.message);
+        res.status(400).json(error.message)
     }
 });
+
+app.post('/kanbans/:id/tasks', async (req, res) => {});
+app.delete('/kanbans/:kanbanId/tasks/:taskId', async (req, res) => {});
+
+app.post('/auth/login', async (req, res) => {
+    if(!req.body){
+        new Error('No data provided');
+    }
+
+    try {
+        res.status(200).json(user);
+    } catch (error){
+        res.status(400).json(error.message)
+    }
+});
+
+app.post('/auth/register', async (req, res) => {
+    if(!req.body){
+        new Error('No data provided');
+    }
+
+    try {
+        const userModel = mongoose.model('Users', UserSchema);
+        const user = new userModel(req.body);
+        await user.save();
+
+        res.status(200).json(user);
+    } catch (error) {
+        res.status(400).json(error.message)
+    }
+});
+
+app.post('/auth/recovery', async (req, res) => {})
