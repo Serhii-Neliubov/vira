@@ -25,7 +25,7 @@ const TaskSchema = new mongoose.Schema({
     title: String,
 })
 
-app.post('/kanbans', (req, res) => {
+app.post('/kanbans', async (req, res) => {
     try {
         if(!req.body){
             new Error('No data provided');
@@ -33,9 +33,12 @@ app.post('/kanbans', (req, res) => {
 
         const kanbanModel = mongoose.model('Kanban', KanbanSchema);
         const kanban = new kanbanModel(req.body);
-        kanban.save();
+        await kanban.save();
 
-        res.status(200).json(req.body);
+        // TODO: При добавлении нового товара долже возвращаться полный массив канбанов, или сам канбан?
+        const kanbans = await kanbanModel.find();
+
+        res.status(200).json(kanbans);
     } catch (error) {
         console.error(error.message);
     }
@@ -55,9 +58,12 @@ app.get('/kanbans', async (req, res) => {
 app.delete('/kanbans/:id', async (req, res) => {
     try {
         const kanbanModel = mongoose.model('Kanban', KanbanSchema);
-        const kanban = await kanbanModel.findByIdAndDelete(req.params.id);
+        await kanbanModel.findByIdAndDelete(req.params.id);
 
-        res.status(200).json(kanban);
+        // TODO: При добавлении нового товара долже возвращаться полный массив канбанов, или сам канбан?
+        const kanbans = await kanbanModel.find();
+
+        res.status(200).json(kanbans);
     } catch (error) {
         console.error(error.message);
     }

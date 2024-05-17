@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3249459e-c7ea-46c9-b278-6d43c987056b" name="Changes" comment="styles for dashboard components">
-      <change afterPath="$PROJECT_DIR$/client/public/logo.png" afterDir="false" />
+    <list default="true" id="3249459e-c7ea-46c9-b278-6d43c987056b" name="Changes" comment="added logo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/Dashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Dashboard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +116,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715960568109</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added logo">
+      <option name="closed" value="true" />
+      <created>1715962420298</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1715962420298</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,6 +136,7 @@
     <MESSAGE value="added alias" />
     <MESSAGE value="fixed alias ts error , added dom elements for Login and Registration pages" />
     <MESSAGE value="styles for dashboard components" />
-    <option name="LAST_COMMIT_MESSAGE" value="styles for dashboard components" />
+    <MESSAGE value="added logo" />
+    <option name="LAST_COMMIT_MESSAGE" value="added logo" />
   </component>
 </project>
