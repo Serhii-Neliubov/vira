@@ -6,19 +6,16 @@ export default function Navigation() {
     return (
         <BrowserRouter>
             <Routes>
-                {routes.map(route => (
-                    route.isAuthRequired ?
-                        <Route
-                            key={route.path}
-                            path={route.path}
-                            element={<ProtectedRoute element={<route.element/>}/>}
-                        /> :
-                        <Route
-                            key={route.path}
-                            path={route.path}
-                            element={<route.element/>}
-                        />
-                ))}
+                {routes.map(route =>
+                    <Route
+                        key={route.path}
+                        path={route.path}
+                        element={route.isAuthRequired ?
+                            <ProtectedRoute element={<route.element/>}/> :
+                            <route.element/>
+                        }
+                    />
+                )}
             </Routes>
         </BrowserRouter>
     )

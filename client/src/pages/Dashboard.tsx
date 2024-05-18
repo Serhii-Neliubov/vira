@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from "react";
-import {FaPlus} from "react-icons/fa";
-import {IoMdCheckmark} from "react-icons/io";
 import axios from "axios";
+
+// icons
+import {FaCheckSquare, FaPlus} from "react-icons/fa";
 import {BsThreeDots} from "react-icons/bs";
 import {CiSearch} from "react-icons/ci";
 
@@ -32,7 +33,7 @@ export default function Dashboard() {
     const [newTaskTitle, setNewTaskTitle] = useState('');
     const [newKanbanTitle, setNewKanbanTitle] = useState('');
 
-    const [isCreateTaskModalOpen, setIsCreateTaskModalOpen] = useState(false);
+    const [createTaskModalOpen, setCreateTaskModalOpen] = useState('');
     const [isCreateKanbanModalOpen, setIsCreateKanbanModalOpen] = useState(false);
 
     const [mouseEnteredKanban, setMouseEnteredKanban] = useState('');
@@ -87,7 +88,7 @@ export default function Dashboard() {
         }
     }
 
-    function createTaskHandler(event: React.KeyboardEvent<HTMLInputElement>) {
+    function createTaskHandler(event: React.KeyboardEvent<HTMLTextAreaElement>) {
         if (event.key !== 'Enter') {
             return;
         }
@@ -99,7 +100,7 @@ export default function Dashboard() {
         }]);
 
         setNewTaskTitle('');
-        setIsCreateTaskModalOpen(false);
+        setCreateTaskModalOpen('');
     }
 
     return (
@@ -128,50 +129,20 @@ export default function Dashboard() {
                        placeholder='Поиск'/>
             </div>
             <div className='flex gap-2'>
-                <div className='w-[270px] bg-amber-500 min-h-[600px] pt-[15px] pl-[10px] rounded'>
-                    <span>К выполнению</span>
-
-                    <div className='my-[10px] flex flex-col gap-2'>
-                        {tasks.map(task =>
-                            <div key={task.id} className='max-w-[100%] overflow-auto'>{task.title}</div>
-                        )}
-                        {isCreateTaskModalOpen ?
-                            <input
-                                autoFocus
-                                type='text'
-                                value={newTaskTitle}
-                                onBlur={() => setIsCreateTaskModalOpen(false)}
-                                onKeyDown={event => createTaskHandler(event)}
-                                onChange={event => setNewTaskTitle(event.target.value)}
-                                className='bg-amber-500 outline-none placeholder:text-black'
-                            /> :
-                            <button onClick={() => setIsCreateTaskModalOpen(true)} className='flex items-center gap-2'>
-                                <FaPlus/>Создать
-                            </button>
-                        }
-                    </div>
-                </div>
-                <div className='w-[270px] bg-amber-500 min-h-[600px] pt-[15px] pl-[10px] rounded'>
-                    <span>В работе</span>
-                </div>
-                <div className='w-[270px] bg-amber-500 min-h-[600px] pt-[15px] pl-[10px] rounded'>
-                    <div className='flex gap-2 items-center'>Готово <IoMdCheckmark/></div>
-                </div>
-
                 {kanbans.map(kanban =>
                     <div
                         onMouseEnter={() => setMouseEnteredKanban(kanban._id)}
                         onMouseLeave={() => setMouseEnteredKanban('')}
                         key={kanban._id}
-                        className='min-w-[270px] bg-[#f7f8f9] min-h-[600px] rounded'
-                    >
+                        className='min-w-[270px] bg-[#f7f8f9] min-h-[600px] rounded'>
                         <div
                             onMouseEnter={() => setMouseEnteredKanbanTitle(kanban._id)}
                             onMouseLeave={() => setMouseEnteredKanbanTitle('')}
-                            className='flex gap-2 py-[8px] px-[8px]'
-                        >
+                            className='flex gap-2 py-[8px] px-[8px]'>
                             <span
-                                className='w-full flex items-center cursor-pointer h-[40px] pl-[8px] hover:bg-gray-300 transition-all rounded bg-gray-200'>{kanban.title}</span>
+                                className='w-full flex items-center cursor-pointer h-[40px] pl-[8px] hover:bg-gray-300 transition-all rounded bg-gray-200'>
+                                {kanban.title}
+                            </span>
 
                             {mouseEnteredKanbanTitle === kanban._id && (
                                 <div onClick={() => deleteKanbanHandler(kanban._id)}
@@ -182,11 +153,29 @@ export default function Dashboard() {
                         </div>
 
                         {mouseEnteredKanban === kanban._id && (
-                            <div
-                                className='flex gap-2 items-center mx-[8px] p-[8px] rounded hover:cursor-pointer transition-all hover:bg-gray-300'>
-                                <FaPlus className='w-[16px] h-[16px]'/>
-                                Create a task
-                            </div>
+                            createTaskModalOpen === kanban._id ?
+                                <div
+                                    className='h-[100px] border-2 border-blue-500 mx-[8px] w-[254px] bg-white rounded flex flex-col justify-between'>
+                                    <textarea
+                                        placeholder='What do you need to do?'
+                                        onBlur={() => setCreateTaskModalOpen('')}
+                                        autoFocus
+                                        maxLength={255}
+                                        value={newTaskTitle}
+                                        onKeyDown={event => createTaskHandler(event)}
+                                        onChange={event => setNewTaskTitle(event.target.value)}
+                                        className='w-full h-[44px] outline-none resize-none p-[10px]'
+                                    />
+                                    <div>
+                                        <FaCheckSquare className='text-blue-400 m-[8px]'/>
+                                    </div>
+                                </div> :
+                                <div
+                                    onClick={() => setCreateTaskModalOpen(kanban._id)}
+                                    className='flex gap-2 items-center mx-[8px] p-[8px] rounded hover:cursor-pointer transition-all hover:bg-gray-300'>
+                                    <FaPlus className='w-[16px] h-[16px]'/>
+                                    <span>Create a task</span>
+                                </div>
                         )}
                     </div>
                 )}

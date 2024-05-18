@@ -7,7 +7,7 @@ type ProtectedRouteProps = {
 
 export default function ProtectedRoute({element}: ProtectedRouteProps): React.ReactNode {
     // Replace the following line with your authentication logic
-    const isAuthenticated = false;
+    const isAuthenticated = true;
 
     if (!isAuthenticated) {
         return <Navigate to="/login" replace/>;

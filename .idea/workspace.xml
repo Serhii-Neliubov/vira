@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3249459e-c7ea-46c9-b278-6d43c987056b" name="Changes" comment="added dashboard title changing functional">
-      <change afterPath="$PROJECT_DIR$/client/src/navigation/Navigation.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/navigation/nav.data.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/pages/index.ts" afterDir="false" />
+    <list default="true" id="3249459e-c7ea-46c9-b278-6d43c987056b" name="Changes" comment="navigation components refactoring">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/ProtectedRoute.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/ProtectedRoute.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/navigation/Navigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/navigation/Navigation.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/pages/Dashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Dashboard.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -196,7 +194,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716039141544</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="navigation components refactoring">
+      <option name="closed" value="true" />
+      <created>1716045247316</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1716045247316</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,6 +221,7 @@
     <MESSAGE value="deleted dotenv module and fixed error with environment variables" />
     <MESSAGE value="style changes" />
     <MESSAGE value="added dashboard title changing functional" />
-    <option name="LAST_COMMIT_MESSAGE" value="added dashboard title changing functional" />
+    <MESSAGE value="navigation components refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="navigation components refactoring" />
   </component>
 </project>
