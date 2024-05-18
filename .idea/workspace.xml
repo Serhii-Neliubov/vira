@@ -4,12 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3249459e-c7ea-46c9-b278-6d43c987056b" name="Changes" comment="navigation components refactoring">
+    <list default="true" id="3249459e-c7ea-46c9-b278-6d43c987056b" name="Changes" comment="dashboard style changes">
+      <change afterPath="$PROJECT_DIR$/client/src/hooks/useInput.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/models/CommentModel.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/models/ProjectModel.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/models/TicketModel.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/models/UserModel.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/services/CommentsService.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/services/ProjectsService.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/services/TicketsService.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/services/UsersService.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/ProtectedRoute.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/ProtectedRoute.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/navigation/Navigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/navigation/Navigation.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/pages/Dashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Dashboard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/vite.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,7 +212,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716045247316</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="dashboard style changes">
+      <option name="closed" value="true" />
+      <created>1716048751029</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1716048751029</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,6 +240,7 @@
     <MESSAGE value="style changes" />
     <MESSAGE value="added dashboard title changing functional" />
     <MESSAGE value="navigation components refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="navigation components refactoring" />
+    <MESSAGE value="dashboard style changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="dashboard style changes" />
   </component>
 </project>
