@@ -1,9 +1,8 @@
-import React, { useEffect } from "react";
-import { FaPlus } from "react-icons/fa";
-import { useState } from "react";
-import { IoMdCheckmark } from "react-icons/io";
+import React, {useEffect, useState} from "react";
+import {FaPlus} from "react-icons/fa";
+import {IoMdCheckmark} from "react-icons/io";
 import axios from "axios";
-import { BsThreeDots } from "react-icons/bs";
+import {BsThreeDots} from "react-icons/bs";
 import {CiSearch} from "react-icons/ci";
 
 type Task = {
@@ -18,7 +17,7 @@ type Kanban = {
     tasks?: string[],
 }
 
-export default function Dashboard(){
+export default function Dashboard() {
     const API_URL = import.meta.env.VITE_API_URL;
 
     // TODO: Remove static title when the title will be fetched from the server
@@ -28,7 +27,7 @@ export default function Dashboard(){
     const [dashboardTitleModalOpen, setDashboardTitleModalOpen] = useState(false);
 
     const [tasks, setTasks] = useState<Task[]>([]);
-    const [kanbans, setKanbans] = useState<Kanban[]>([])
+    const [kanbans, setKanbans] = useState<Kanban[]>([]);
 
     const [newTaskTitle, setNewTaskTitle] = useState('');
     const [newKanbanTitle, setNewKanbanTitle] = useState('');
@@ -59,6 +58,7 @@ export default function Dashboard(){
             console.error(e);
         }
     }
+
     async function createKanbanHandler(event: React.KeyboardEvent<HTMLInputElement>) {
         if (event.key !== 'Enter') {
             return;
@@ -72,22 +72,23 @@ export default function Dashboard(){
             setKanbans([...response.data]);
             setNewKanbanTitle('');
             setIsCreateKanbanModalOpen(false);
-        }catch (error) {
+        } catch (error) {
             console.error(error)
         }
     }
+
     async function deleteKanbanHandler(id: string) {
         try {
             console.log('hashdhasd')
             const response = await axios.delete(`${API_URL}/kanbans/${id}`);
             setKanbans([...response.data]);
-        } catch (error){
+        } catch (error) {
             console.error(error);
         }
     }
 
-    function createTaskHandler (event: React.KeyboardEvent<HTMLInputElement>) {
-        if(event.key !== 'Enter') {
+    function createTaskHandler(event: React.KeyboardEvent<HTMLInputElement>) {
+        if (event.key !== 'Enter') {
             return;
         }
 
@@ -115,14 +116,16 @@ export default function Dashboard(){
                         onBlur={() => setDashboardTitleModalOpen(false)}
                         className='h-[46px] text-[24px] outline-blue-500 pl-[5px] w-[420px] flex flex-nowrap'
                     /> :
-                    <h1 onClick={() => setDashboardTitleModalOpen(true)} className='text-[24px] py-[5px] w-fit rounded font-semibold hover:bg-gray-200 transition-all'>
+                    <h1 onClick={() => setDashboardTitleModalOpen(true)}
+                        className='text-[24px] py-[5px] w-fit rounded font-semibold hover:bg-gray-200 transition-all'>
                         {dashboardTitle}
                     </h1>
                 }
             </div>
             <div className='bg-white flex items-center max-w-[220px] rounded border border-gray-400 h-[40px] mb-[40px]'>
                 <CiSearch className='w-[25px] h-[25px] ml-[8px]'/>
-                <input type='text' className='w-[270px] h-[20px] bg-white rounded p-[5px] mr-[3px] outline-none' placeholder='Поиск'/>
+                <input type='text' className='w-[270px] h-[20px] bg-white rounded p-[5px] mr-[3px] outline-none'
+                       placeholder='Поиск'/>
             </div>
             <div className='flex gap-2'>
                 <div className='w-[270px] bg-amber-500 min-h-[600px] pt-[15px] pl-[10px] rounded'>
@@ -190,17 +193,17 @@ export default function Dashboard(){
 
                 {isCreateKanbanModalOpen ?
                     <div className='bg-gray-200 h-[42px] p-[5px] rounded'>
-                            <input
-                                autoFocus
-                                type='text'
-                                maxLength={30}
-                                value={newKanbanTitle}
-                                onBlur={() => setIsCreateKanbanModalOpen(false)}
-                                onKeyDown={(event) => createKanbanHandler(event)}
-                                onChange={event => setNewKanbanTitle(event.target.value)}
-                                className='pl-[5px] rounded bg-none h-full w-[270px] placeholder:text-black outline-blue-500'
-                            />
-                        </div> :
+                        <input
+                            autoFocus
+                            type='text'
+                            maxLength={30}
+                            value={newKanbanTitle}
+                            onBlur={() => setIsCreateKanbanModalOpen(false)}
+                            onKeyDown={(event) => createKanbanHandler(event)}
+                            onChange={event => setNewKanbanTitle(event.target.value)}
+                            className='pl-[5px] rounded bg-none h-full w-[270px] placeholder:text-black outline-blue-500'
+                        />
+                    </div> :
                     <FaPlus
                         onClick={() => setIsCreateKanbanModalOpen(true)}
                         className='w-[42px] h-[42px] p-[13px] cursor-pointer hover:bg-gray-300 transition-all rounded bg-[#091e420f]'

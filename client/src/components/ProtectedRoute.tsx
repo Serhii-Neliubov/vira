@@ -1,13 +1,16 @@
 import React from "react";
-import {useNavigate} from "react-router-dom";
+import {Navigate} from "react-router-dom";
 
-export default function ProtectedRoute({ element }: { element: React.ReactNode }) {
+type ProtectedRouteProps = {
+    element: React.ReactNode;
+};
+
+export default function ProtectedRoute({element}: ProtectedRouteProps): React.ReactNode {
     // Replace the following line with your authentication logic
-    const navigate = useNavigate();
-    const isAuthenticated = true;
+    const isAuthenticated = false;
 
-    if(!isAuthenticated) {
-        navigate('/login');
+    if (!isAuthenticated) {
+        return <Navigate to="/login" replace/>;
     }
 
     return element;
