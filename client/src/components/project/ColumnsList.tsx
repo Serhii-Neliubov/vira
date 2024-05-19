@@ -1,9 +1,8 @@
-import {TicketModel, TicketState} from "@models/TicketModel.ts";
-import TicketList from "@components/project/TicketList.tsx";
+import {TicketState} from "@models/TicketModel.ts";
+import TicketsList from "@components/project/TicketsList.tsx";
 import {Column} from "@components/project/Column.tsx";
 
 type ColumnListProps = {
-    tickets: TicketModel[];
     search: { value: string };
 }
 
@@ -15,11 +14,11 @@ const columnNames = {
     [TicketState.Done]: 'Done',
 };
 
-export default function ColumnList({tickets, search}: ColumnListProps) {
+export default function ColumnsList({search}: ColumnListProps) {
     return (
         columns.map(column =>
             <Column columnName={columnNames[column]} key={column}>
-                <TicketList tickets={tickets} ticketListColumn={column} search={search}/>
+                <TicketsList ticketState={column} search={search}/>
             </Column>
         )
 

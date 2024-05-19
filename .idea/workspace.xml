@@ -4,16 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3249459e-c7ea-46c9-b278-6d43c987056b" name="Changes" comment="added models, services, vite config file path changes and refactoring">
-      <change afterPath="$PROJECT_DIR$/client/src/components/project/Column.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/project/ColumnList.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/project/Ticket.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/project/TicketList.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/pages/Projects.tsx" afterDir="false" />
+    <list default="true" id="3249459e-c7ea-46c9-b278-6d43c987056b" name="Changes" comment="refactoring">
+      <change afterPath="$PROJECT_DIR$/client/src/components/Header.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/ui/UiInput.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/ui/UiTextarea.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/project/ColumnList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/project/ColumnsList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/project/TicketList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/project/TicketsList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/navigation/nav.data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/navigation/nav.data.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/Dashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Project.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/Project.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Project.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/Projects.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Projects.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,7 +226,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716073761259</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="refactoring">
+      <option name="closed" value="true" />
+      <created>1716114425752</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1716114425752</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,6 +256,7 @@
     <MESSAGE value="navigation components refactoring" />
     <MESSAGE value="dashboard style changes" />
     <MESSAGE value="added models, services, vite config file path changes and refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="added models, services, vite config file path changes and refactoring" />
+    <MESSAGE value="refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring" />
   </component>
 </project>

@@ -3,7 +3,16 @@
 @tailwind utilities;
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.custom-after-line::after {
+    content: '';
+    border: 2px solid #a855f7;
+    position: absolute;
+    width: 80%;
+    bottom: -10px;
+    pointer-events: none;
 }

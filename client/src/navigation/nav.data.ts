@@ -5,7 +5,6 @@ export const routes = [
         path: "/",
         element: Home,
         isAuthRequired: true,
-
     },
 
     // Auth
