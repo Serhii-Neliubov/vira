@@ -1,17 +1,14 @@
-import {AccountRecovery, ChangePassword, Dashboard, Home, Login, Registration} from "@pages/index.ts";
+import {AccountRecovery, ChangePassword, Home, Login, Project, Projects, Registration} from "@pages/index.ts";
 
 export const routes = [
-    {
-        path: "/dashboard",
-        element: Dashboard,
-        isAuthRequired: true,
-    },
     {
         path: "/",
         element: Home,
         isAuthRequired: true,
 
     },
+
+    // Auth
     {
         path: "/login",
         element: Login,
@@ -27,9 +24,23 @@ export const routes = [
         element: ChangePassword,
         isAuthRequired: false,
     },
+
     {
         path: "/account-recovery",
         isAuthRequired: false,
         element: AccountRecovery,
-    }
+    },
+
+    // Projects
+    {
+        path: "/projects",
+        isAuthRequired: false,
+        element: Projects,
+    },
+    {
+        path: "/projects/:projectId",
+        element: Project,
+        isAuthRequired: true,
+    },
+
 ]

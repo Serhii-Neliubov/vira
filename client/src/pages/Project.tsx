@@ -4,27 +4,17 @@ import {useEffect, useState} from "react";
 import {CiSearch} from "react-icons/ci";
 
 // models
-import {TicketModel, TicketState} from "@models/TicketModel.ts";
+import {TicketModel} from "@models/TicketModel.ts";
 
 // services
 import {TicketsService} from "@services/TicketsService.ts";
 
 // hooks
 import useInput from "@hooks/useInput.tsx";
+import ColumnList from "@components/project/ColumnList.tsx";
 
-const columnNames = {
-    [TicketState.Open]: 'Open',
-    [TicketState.InProgress]: 'In Progress',
-    [TicketState.Review]: 'Review',
-    [TicketState.Done]: 'Done',
-};
-
-export default function Dashboard() {
+export default function Project() {
     // const API_URL = import.meta.env.VITE_API_URL;
-    const columns = Object.values(TicketState);
-
-    // TODO: Remove static title when the title will be fetched from the server
-
     const search = useInput('');
 
     const [tickets, setTickets] = useState<TicketModel[]>([]);
@@ -181,35 +171,7 @@ export default function Dashboard() {
                 {/*    />*/}
                 {/*}*/}
 
-                {columns.map(column => {
-                    const filteredTickets = tickets.filter(ticket => {
-                        if (search.value.length > 0) {
-                            return ticket.state === column && ticket.title.includes(search.value);
-                        }
-
-                        return ticket.state === column
-                    });
-
-                    return (
-                        <div key={column} className='min-w-[270px] bg-[#f7f8f9] min-h-[600px] rounded'>
-                            <div className='flex gap-2 py-[8px] px-[8px]'>
-                                <span
-                                    className='w-full flex items-center h-[40px] pl-[8px]'>
-                                    {columnNames[column]}
-                                </span>
-                            </div>
-
-                            {filteredTickets.map(ticket => (
-                                    <div key={ticket.id}
-                                         className='bg-white p-[8px] rounded mt-[8px] hover:bg-gray-200 transition-all'>
-                                        <h3 className='text-[16px] font-semibold'>{ticket.title}</h3>
-                                        <p className='text-[14px]'>{ticket.description}</p>
-                                    </div>
-                                )
-                            )}
-                        </div>
-                    )
-                })}
+                <ColumnList search={search} tickets={tickets}/>
             </div>
         </div>
     )

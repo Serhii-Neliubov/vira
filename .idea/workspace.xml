@@ -4,22 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3249459e-c7ea-46c9-b278-6d43c987056b" name="Changes" comment="dashboard style changes">
-      <change afterPath="$PROJECT_DIR$/client/src/hooks/useInput.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/models/CommentModel.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/models/ProjectModel.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/models/TicketModel.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/models/UserModel.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/services/CommentsService.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/services/ProjectsService.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/services/TicketsService.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/services/UsersService.ts" afterDir="false" />
+    <list default="true" id="3249459e-c7ea-46c9-b278-6d43c987056b" name="Changes" comment="added models, services, vite config file path changes and refactoring">
+      <change afterPath="$PROJECT_DIR$/client/src/components/project/Column.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/project/ColumnList.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/project/Ticket.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/project/TicketList.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/pages/Projects.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/Dashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Dashboard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/vite.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/vite.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/navigation/nav.data.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/navigation/nav.data.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/Dashboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/Project.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +65,7 @@
     "node.js.selected.package.standard": "",
     "node.js.selected.package.stylelint": "",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.sourceCode.JavaScript",
+    "settings.editor.selected.configurable": "settings.javascript.prettier",
     "ts.external.directory.path": "E:\\Webstorm-Projects\\vira\\client\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
@@ -220,7 +214,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716048751029</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="added models, services, vite config file path changes and refactoring">
+      <option name="closed" value="true" />
+      <created>1716073761259</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1716073761259</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -241,6 +243,7 @@
     <MESSAGE value="added dashboard title changing functional" />
     <MESSAGE value="navigation components refactoring" />
     <MESSAGE value="dashboard style changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="dashboard style changes" />
+    <MESSAGE value="added models, services, vite config file path changes and refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="added models, services, vite config file path changes and refactoring" />
   </component>
 </project>
